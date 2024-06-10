@@ -1,5 +1,5 @@
 # Используем node image в качестве базового образа
-FROM node:14-alpine
+FROM node:20.10-alpine
 
 # Установка утилиты curl для удобства
 RUN apk add --no-cache curl

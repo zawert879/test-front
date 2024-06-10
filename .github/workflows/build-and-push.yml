@@ -29,6 +29,7 @@ jobs:
       run: |
         TAG=${{ steps.get_commit.outputs.commit_hash }}
         IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/${{github.event.repository.name}}
+        echo ${{steps.get_commit.outputs.commit_hash}} > VERSION
         docker build -t $IMAGE_NAME:$TAG -t $IMAGE_NAME:latest .
         docker push $IMAGE_NAME:$TAG
         docker push $IMAGE_NAME:latest
