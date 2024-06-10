@@ -9,7 +9,7 @@ RUN curl -o- -L https://yarnpkg.com/install.sh | sh
 
 # Установка зависимостей
 WORKDIR /app
-COPY package.json yarn.lock ./
+COPY package.json yarn.loc* ./
 RUN yarn install --frozen-lockfile
 
 # Копирование остальных файлов приложения
